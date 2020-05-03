@@ -1,0 +1,21 @@
+extends ./layout/common
+block content
+  .container
+    if (err)
+      div(class="alert alert-danger" role="alert")= err
+    form(action="/login", method="POST")
+      table
+        thead
+          tr
+            th
+              label(for="email") Email: 
+            th 
+              input(name="email" id="email", value=email ? email : '')
+        tbody
+          tr
+            td
+              label(for="password") Password:
+            td
+              input(name="password" id="password")
+      button(class="btn btn-primary") Login
+

@@ -1,0 +1,42 @@
+extends ../layout/common
+block content
+    .container
+      h1 SIGN UP
+      form(action="/users/signup", method="POST", enctype="multipart/form-data")
+        table
+          thead
+            tr
+              th
+                label(for="name", style="font-weight: normal") Name: 
+              th
+                input(id="name", name="name", placeholder="Ex: John,..." required)
+          tbody
+            tr
+              td
+                label(for="email") Email:
+              td
+                input(id="email", name="email", 
+                type="email", 
+                placeholder="Ex: john@gmail.com,..." required)
+            tr
+              td
+                label(for="password") Password:
+              td
+                input(id="password", name="password", placeholder="Ex: 2asad2,..." required, minlength="6")
+            tr
+              td
+                label(for="address") Address:
+              td
+                input(id="address", name="address", placeholder="Ex: Da nang" required)
+            tr
+              td
+                label(for="phone") Phone Number:
+              td
+                input(id="phone", name="phone", placeholder="Ex: 0123456789" required)
+            tr
+              td
+                label(for="avatar") Avatar:
+              td
+                input(id="avatar", name="avatar", type="file" required)
+        button(class="btn btn-primary") Create
+          

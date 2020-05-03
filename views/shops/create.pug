@@ -1,0 +1,24 @@
+extends ../layout/common
+block content
+  .container
+    h1 CREATE SHOP
+      form(action=`/shops/${user._id}/create`, method="POST")
+        table
+          thead
+            tr
+              th
+                label(for="shop", style="font-weight: normal") Shop: 
+              th
+                input(id="shop", name="shop", placeholder="Ex: Rei,..." required)
+          tbody
+            tr
+              td
+                label(for="address") Address:
+              td
+                input(id="address", name="address", placeholder="Ex: Da nang" required)
+            tr
+              td
+                label(for="phone") Phone Number:
+              td
+                input(id="phone", name="phone", placeholder="Ex: 0123456789" required, minlength="10", maxlength="10")
+        button(class="btn btn-primary") Create

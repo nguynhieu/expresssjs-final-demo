@@ -1,0 +1,40 @@
+extends ../layout/common
+block content
+    .container
+      h1 Profile User
+      div.profile.d-flex
+        div#profile-avatar.profile-avatar.mr-3
+          img(src=user.avatar || 'https://res.cloudinary.com/reii/image/upload/v1588255305/oxpwpnna1oqmmwozvkwn.webp')
+        div.profile-infor
+          table
+            thead
+              tr
+                th Name: 
+                th= user.name
+            tbody
+              tr
+                td Email:
+                td= user.email
+              tr
+                td Age:
+                td= user.age
+              tr
+                td Address:
+                td= user.address
+              tr
+                td Phone:
+                td= user.phone
+              if (user.shop)
+                tr
+                  td Shop:
+                  td= user.shop
+              tr(class="change-avatar")
+                td
+                  label(for="input-avatar") Change Avatar
+                td
+                  form(action=`/users/${user._id}/profile`, method="POST", enctype="multipart/form-data")
+                    input(type="file" name="newAvatar" id="input-avatar")
+                    button(class="btn btn-primary") Submit
+          
+      a(href="/users" class="btn btn-primary mt-5") Back
+      

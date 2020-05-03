@@ -1,0 +1,53 @@
+html
+  head
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/css/custom.css")
+  body
+    header.header
+        div.header-wrapper
+            nav.navbar.navbar-expand-lg.navbar-light.bg-light
+                a.navbar-brand(href='/')
+                    img(src="/images/brand.png", style="width: 80")
+                if (!user)
+                    ul.navbar-nav.ml-auto.mr-3.d-lg-none.d-block
+                        .ml-auto.d-flex
+                            li.nav-item.mr-2
+                                a.nav-link(href='/login') Login
+                            li.nav-item
+                                a.nav-link(href='/users/signup', 
+                                class="btn btn-secondary p-2", 
+                                style="color: #fff") Sign up
+                else 
+                    p.ml-auto.mr-3.d-lg-none.d-block.text-uppercase.user-active= user.name
+                    a.d-lg-none.d-block(class="btn btn-primary" class="ml-2" href="/login/logout") Log out
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                #navbarSupportedContent.collapse.navbar-collapse
+                    ul.navbar-nav
+                        li.nav-item
+                            a.nav-link(href='/users') Users
+                        li.nav-item
+                            a.nav-link(href='/products') Products
+                        li.nav-item
+                            a.nav-link(href='/shops') My shop
+                        li.nav-item
+                            a.nav-link(href='/transactions') Transactions
+                        li.nav-item
+                            a.nav-link(href='/cart')= `Cart (${totalsProductsInCart ? totalsProductsInCart : 0})`
+                    if (!user)
+                        ul.navbar-nav.ml-auto.d-lg-block.d-none
+                            .ml-auto.d-flex
+                                li.nav-item.mr-2
+                                    a.nav-link(href='/login') Login
+                                li.nav-item
+                                    a.nav-link(href='/users/signup', class="btn btn-secondary p-2", style="color: #fff") Sign up                        
+                    else 
+                        p.ml-auto.d-lg-block.d-none.text-uppercase.user-active= user.name
+                        a.d-lg-block.d-none(class="btn btn-primary" class="ml-2" href="/login/logout") Log out
+            block content
+    script(type="text/javascript", src="/js/custom-css.js")
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+
+    

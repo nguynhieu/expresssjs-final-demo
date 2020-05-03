@@ -1,0 +1,24 @@
+extends ../layout/common
+block content
+  .container
+    if (shop)
+      ul.list-unstyled.d-flex
+        li.text-uppercase(style="font-size: 1.5rem;") Shop:
+          span.ml-1=shop.shop
+        li.ml-5.text-uppercase(style="font-size: 1.5rem;") Address:
+          span.ml-1=shop.address
+        li.ml-5.text-uppercase(style="font-size: 1.5rem;")   Phone:
+          span.ml-1=shop.phone
+      a(class="btn btn-info mt-2 mb-5" href=`/products/${shop._id}/create`) CREATE A NEW PRODUCT
+      if(shop.product.length)
+        h4.mt-2 Product:
+        div.card-columns
+          -for (let i = 0; i < shop.product.length; i++)
+            div.card
+              img.card-img-top(src=shop.product[i].coverImage)
+              div.card-body
+                h5.card-title=shop.product[i].title
+                p.card-text=shop.product[i].description
+    if (!shop)
+      a(class="btn btn-primary" href=`/shops/${user.id}/create`) CREATE A SHOP
+      

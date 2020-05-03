@@ -1,0 +1,24 @@
+extends ../layout/common
+block content
+  .container
+    h1 CREATE Product
+      form(action=`/products/${id}/create`, method="POST" ,enctype="multipart/form-data")
+        table
+          thead
+            tr
+              th
+                label(for="title", style="font-weight: normal") Title: 
+              th
+                input(id="title", name="title", placeholder="Ex: Math Book" required)
+          tbody
+            tr
+              td
+                label(for="description") Description:
+              td
+                input(id="description", name="description", placeholder="Ex: This is Math book" required)
+            tr
+              td
+                label(for="coverImage") Cover Image:
+              td
+                input(id="coverImage", name="coverImage", type="file" required)
+        button(class="btn btn-primary") Create

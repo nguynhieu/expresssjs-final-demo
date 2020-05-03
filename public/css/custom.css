@@ -1,0 +1,144 @@
+header .header-wrapper{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('/images/background-index.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.header-wrapper .nav-link {
+    font-size: 1.4rem;
+}
+
+.container table {
+    position: relative;
+    overflow: hidden;
+}
+
+.container input {
+    padding: 5px 10px;
+}
+
+.container table td,
+.container table th,
+.profile {
+    position: relative;
+}
+
+.container table::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/background-index.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    filter: blur(10px);
+}
+
+.profile {
+    margin-top: 2rem;
+    max-width: 768px;
+}
+
+.profile::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background-image: url('/images/background-index.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    filter: blur(3px);
+    box-shadow: 0 5px 10px #333;
+}
+
+.user-active {
+    height: 100%;
+    margin: 0;
+    line-height: 100%;
+}
+
+.profile-avatar {
+    width: 40%;
+    max-width: 200px;
+    height: auto;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    border: .5rem solid #e69900;
+}
+
+.profile-avatar img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+}
+
+.profile-infor {
+    width: 60%;
+    margin-top: .25rem;
+}
+
+.profile-infor table {
+    width: 100%;
+    display: block;
+    height: 100%;
+    min-height: 200px;
+}
+
+.profile-infor th {
+    font-size: 1.75rem;
+}
+
+.profile-infor tbody {
+    position: relative;
+}
+
+.profile-infor .change-avatar {
+    position: absolute;
+    bottom: 0;
+}
+
+.profile-infor .change-avatar td:nth-child(1) {
+    z-index: 2;
+}
+
+.profile-infor .change-avatar td:nth-child(2) {
+    position: absolute;
+    top: 2px;
+    z-index: 1;
+    left: 3px;
+}
+.profile-infor .change-avatar td:nth-child(2) input {
+    max-width: 200px;
+}
+
+.profile-infor .change-avatar td:nth-child(2) form {
+    display: flex;
+}
+
+#input-avatar {
+    /* width: 1px;
+    visibility: hidden; */
+}
+
+label[for="input-avatar"] {
+    cursor: pointer;
+    background: rgb(163, 83, 83);
+    padding: .75rem 1rem;
+    color: #fff;
+    border-radius: .125rem;
+    font-size: .75rem;
+    font-weight: bold;
+}
+

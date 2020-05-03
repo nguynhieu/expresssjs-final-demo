@@ -1,0 +1,28 @@
+extends ../layout/common
+block content
+  .container
+    h1 Transactions History
+    if (transactions)
+      ul.list-unstyled  
+        each transaction in transactions
+          li.mt-4.pt-2.border-top
+            div
+              table
+                thead
+                  tr
+                    th Email: 
+                    th= transaction.userEmail
+                tbody
+                  tr
+                    td Shop:
+                    td= transaction.shop
+
+                  tr
+                    td Product
+                    td  
+                      each prod in transaction.product
+                        li prod
+                  tr
+                    td Date:
+                    td= transaction.date
+
